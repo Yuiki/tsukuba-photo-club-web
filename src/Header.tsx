@@ -11,10 +11,11 @@ type Props = {
 const Header: React.FC<Props> = (props) => (
   <div
     css={css({
-      backgroundColor: props.fixed ? "#ffffffbb" : "#eeeeee44",
+      backgroundColor: props.fixed ? "#ffffffdd" : "#eeeeee44",
       position: props.fixed ? "fixed" : undefined,
       width: "100vw",
-      zIndex: 1
+      zIndex: 1,
+      boxShadow: "0 1px 3px rgba(0,0,0,0.06)"
     })}
   >
     <div
