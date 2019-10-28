@@ -47,6 +47,7 @@ const Header: React.FC<Props> = (props) => (
           margin-right: 20px !important;
           @media (max-width: 800px) {
             margin-right: -0.5em !important;
+            margin-top: 0 !important;
           }
           @media (max-width: 420px) {
             font-size: 10px !important;
