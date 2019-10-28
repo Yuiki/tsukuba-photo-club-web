@@ -19,15 +19,40 @@ const Header: React.FC<Props> = (props) => (
     })}
   >
     <div
-      css={css({
-        width: "100%",
-        display: "flex"
-      })}
+      css={css`
+        width: 100%;
+        display: flex;
+        @media (max-width: 800px) {
+          align-items: center;
+          flex-direction: column;
+        }
+      `}
     >
-      <Link to="/" css={css({ marginRight: "auto", marginLeft: "20px" })}>
+      <Link
+        to="/"
+        css={css`
+          margin-right: auto;
+          margin-left: 20px;
+          @media (max-width: 800px) {
+            margin-right: 0;
+            margin-left: 0;
+          }
+        `}
+      >
         <img src={logo} alt="logo" />
       </Link>
-      <Menu text css={css({ marginRight: "20px !important" })}>
+      <Menu
+        text
+        css={css`
+          margin-right: 20px !important;
+          @media (max-width: 800px) {
+            margin-right: -0.5em !important;
+          }
+          @media (max-width: 420px) {
+            font-size: 10px !important;
+          }
+        `}
+      >
         <Menu.Item name="about" as={Link} to="/about" />
         <Menu.Item name="members" />
         <Menu.Item name="activities" />
