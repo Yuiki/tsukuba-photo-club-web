@@ -1,6 +1,6 @@
 import React from "react"
 import AppHeader from "./Header"
-import { Container, Header } from "semantic-ui-react"
+import { Container, Header, Icon, Divider } from "semantic-ui-react"
 import css from "@emotion/css"
 
 const About: React.FC = () => (
@@ -22,6 +22,7 @@ const About: React.FC = () => (
       <Header as="h1" textAlign="center">
         About
       </Header>
+      <Divider />
       <div
         css={css({
           paddingTop: "16px"
@@ -64,10 +65,35 @@ const About: React.FC = () => (
         alignSelf: "center",
         width: "100%",
         textAlign: "center",
-        marginBottom: "16px"
+        display: "flex",
+        justifyContent: "center",
+        marginTop: "16px",
+        marginBottom: "4px"
       })}
     >
       <p>©︎ 2019 筑波大学写真部</p>
+      <div css={css({ position: "absolute", right: "12px" })}>
+        <a
+          href="https://twitter.com/tsukuba_photo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon
+            name="twitter"
+            size="large"
+            css={css({
+              marginRight: "8px !important"
+            })}
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/tsukuba.photoclub/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="instagram" size="large" />
+        </a>
+      </div>
     </div>
   </div>
 )
