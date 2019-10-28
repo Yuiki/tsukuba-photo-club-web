@@ -4,12 +4,19 @@ import { Container, Header } from "semantic-ui-react"
 import css from "@emotion/css"
 
 const About: React.FC = () => (
-  <>
+  <div
+    css={css({
+      display: "flex",
+      flexFlow: "column",
+      minHeight: "100vh"
+    })}
+  >
     <AppHeader />
     <Container
       text
       css={css({
-        paddingTop: "64px"
+        paddingTop: "64px",
+        flex: 1
       })}
     >
       <Header as="h1" textAlign="center">
@@ -52,7 +59,17 @@ const About: React.FC = () => (
         </p>
       </div>
     </Container>
-  </>
+    <div
+      css={css({
+        alignSelf: "center",
+        width: "100%",
+        textAlign: "center",
+        marginBottom: "16px"
+      })}
+    >
+      <p>©︎ 2019 筑波大学写真部</p>
+    </div>
+  </div>
 )
 
 export default About
