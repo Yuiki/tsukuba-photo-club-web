@@ -59,7 +59,7 @@ const Header: React.FC<Props> = (props) => (
         <Menu.Item name="activities" />
         <Menu.Item name="exhibitions" />
         <Menu.Item name="gallery" />
-        <Menu.Item name="contact" />
+        <Menu.Item name="contact" as={Link} to="/contact" />
       </Menu>
     </div>
   </div>
