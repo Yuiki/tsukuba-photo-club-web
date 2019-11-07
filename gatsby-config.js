@@ -32,6 +32,7 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-netlify-cms`
   ]
 }
