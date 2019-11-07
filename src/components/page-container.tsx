@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react"
-import AppHeader from "./Header"
+import AppHeader from "./header"
 import { Container, Header, Divider } from "semantic-ui-react"
 import css from "@emotion/css"
-import Footer from "./Footer"
+import Footer from "./footer"
 
 type Props = {
   title: string

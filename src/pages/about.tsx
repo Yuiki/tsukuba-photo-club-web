@@ -1,5 +1,5 @@
 import React from "react"
-import PageContainer from "./PageContainer"
+import PageContainer from "../components/page-container"
 
 const About: React.FC = () => (
   <PageContainer title="About">

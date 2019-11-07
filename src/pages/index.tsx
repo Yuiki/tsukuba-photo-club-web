@@ -1,9 +1,16 @@
 import React from "react"
-import Slideshow from "./Slideshow"
-import Header from "./Header"
+import "./index.css"
+import "semantic-ui-css/semantic.min.css"
+import { Helmet } from "react-helmet"
+import Slideshow from "../components/slide-show"
+import Header from "../components/header"
 
-const Home: React.FC = () => (
+const IndexPage: React.FC = () => (
   <>
+    <Helmet>
+      <title>筑波大学写真部</title>
+      <meta name="description" content="筑波大学写真部のホームページです" />
+    </Helmet>
     <Header fixed />
     <Slideshow
       imageUrls={[
@@ -17,4 +24,4 @@ const Home: React.FC = () => (
   </>
 )
 
-export default Home
+export default IndexPage
