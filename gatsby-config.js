@@ -1,4 +1,8 @@
 module.exports = {
+  siteMetadata: {
+    title: `筑波大学写真部`,
+    description: `筑波大学写真部のホームページです`
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

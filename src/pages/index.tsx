@@ -1,16 +1,13 @@
 import React from "react"
 import "./index.css"
 import "semantic-ui-css/semantic.min.css"
-import { Helmet } from "react-helmet"
 import Slideshow from "../components/slide-show"
 import Header from "../components/header"
+import Meta from "../components/meta"
 
 const IndexPage: React.FC = () => (
   <>
-    <Helmet>
-      <title>筑波大学写真部</title>
-      <meta name="description" content="筑波大学写真部のホームページです" />
-    </Helmet>
+    <Meta title="Home" />
     <Header fixed />
     <Slideshow
       imageUrls={[

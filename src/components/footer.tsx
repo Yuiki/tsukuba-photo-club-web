@@ -24,6 +24,7 @@ const Footer: React.FC = () => (
         <Icon
           name="twitter"
           size="large"
+          color="black"
           css={css({
             marginRight: "8px !important"
           })}
@@ -34,7 +35,7 @@ const Footer: React.FC = () => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Icon name="instagram" size="large" />
+        <Icon name="instagram" size="large" color="black" />
       </a>
     </div>
   </div>

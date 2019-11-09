@@ -5,7 +5,7 @@ import css from "@emotion/css"
 import Footer from "./footer"
 
 type Props = {
-  title: string
+  title?: string
   children: ReactNode
 }
 
@@ -25,10 +25,16 @@ const PageContainer: React.FC<Props> = ({ title, children }) => (
         flex: 1
       })}
     >
-      <Header as="h1" textAlign="center">
-        {title}
-      </Header>
-      <Divider />
+      {title ? (
+        <>
+          <Header as="h1" textAlign="center">
+            {title}
+          </Header>
+          <Divider />
+        </>
+      ) : (
+        <></>
+      )}
       <div
         css={css({
           paddingTop: "16px"

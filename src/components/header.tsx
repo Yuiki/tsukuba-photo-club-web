@@ -59,8 +59,7 @@ const Header: React.FC<Props> = (props) => (
           >
             <Menu.Item name="about" as={Link} to="/about" />
             <Menu.Item name="members" />
-            <Menu.Item name="activities" />
-            <Menu.Item name="exhibitions" />
+            <Menu.Item name="blogs" as={Link} to="/blogs" />
             <Menu.Item name="gallery" />
             <Menu.Item name="contact" as={Link} to="/contact" />
           </Menu>
@@ -77,7 +76,7 @@ const query = graphql`
     file(relativePath: { eq: "logo.png" }) {
       childImageSharp {
         fixed(width: 300, height: 80) {
-          ...GatsbyImageSharpFixed
+          ...GatsbyImageSharpFixed_noBase64
         }
       }
     }
