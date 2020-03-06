@@ -58,9 +58,7 @@ const Header: React.FC<Props> = (props) => (
             `}
           >
             <Menu.Item name="about" as={Link} to="/about" />
-            <Menu.Item name="members" />
             <Menu.Item name="blogs" as={Link} to="/blogs" />
-            <Menu.Item name="gallery" />
             <Menu.Item name="contact" as={Link} to="/contact" />
           </Menu>
         </div>
