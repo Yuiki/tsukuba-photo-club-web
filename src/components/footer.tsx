@@ -14,8 +14,23 @@ const Footer: React.FC = () => (
       marginBottom: "4px"
     })}
   >
-    <p>©︎ 2020 筑波大学写真部</p>
-    <div css={css({ position: "absolute", right: "12px" })}>
+    <div>
+      <p>©︎ 2020 筑波大学写真部</p>
+      <p css={css({ fontSize: "10px" })}>
+        当サイトではGoogle
+        Analyticsを使用してアクセス情報の収集、処理を行っています。
+        <br />
+        詳しくは
+        <a
+          href="https://policies.google.com/technologies/partner-sites?hl=ja"
+          target="_blank"
+        >
+          こちら
+        </a>
+        をご覧ください。
+      </p>
+    </div>
+    <div css={css({ position: "absolute", right: "12px", bottom: "12px" })}>
       <a
         href="https://twitter.com/tsukuba_photo"
         target="_blank"
