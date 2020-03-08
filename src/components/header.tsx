@@ -53,7 +53,7 @@ const Header: React.FC<Props> = (props) => (
                 margin-top: 0 !important;
               }
               @media (max-width: 420px) {
-                font-size: 10px !important;
+                margin-bottom: 0px !important;
               }
             `}
           >
