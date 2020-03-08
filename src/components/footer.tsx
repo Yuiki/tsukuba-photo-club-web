@@ -14,7 +14,7 @@ const Footer: React.FC = () => (
       marginBottom: "4px"
     })}
   >
-    <p>©︎ 2019 筑波大学写真部</p>
+    <p>©︎ 2020 筑波大学写真部</p>
     <div css={css({ position: "absolute", right: "12px" })}>
       <a
         href="https://twitter.com/tsukuba_photo"
