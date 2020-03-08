@@ -15,7 +15,7 @@ const Slideshow: React.FC<Props> = (props) => {
     const timer = setTimeout(() => {
       const isLast = ref.current.imageUrls.length - 1
       setUrlIdx(urlIdx !== isLast ? urlIdx + 1 : 0)
-    }, 5000)
+    }, 6000)
     return () => clearTimeout(timer)
   }, [urlIdx])
 
