@@ -40,6 +40,10 @@ const Meta: React.FC<Props> = (props) => {
           property: "og:image",
           content: `${site.siteMetadata.siteUrl}${props.image ??
             "/favicon.ico"}`
+        },
+        {
+          property: "og:site_name",
+          content: "筑波大学写真部"
         }
       ]}
       htmlAttributes={{ lang: "ja" }}
