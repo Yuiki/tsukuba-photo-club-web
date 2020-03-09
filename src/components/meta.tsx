@@ -43,7 +43,9 @@ const Meta: React.FC<Props> = (props) => {
         {
           property: "og:site_name",
           content: "筑波大学写真部"
-        }
+        },
+        { property: "twitter:card", content: "summary" },
+        { property: "twitter:site", content: "@tsukuba_photo" }
       ]}
       htmlAttributes={{ lang: "ja" }}
     />
