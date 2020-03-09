@@ -4,10 +4,19 @@ import Meta from "../components/meta"
 import { graphql, Link } from "gatsby"
 import css from "@emotion/css"
 import { Header } from "semantic-ui-react"
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  PocketShareButton,
+  PocketIcon,
+  TwitterShareButton,
+  TwitterIcon
+} from "react-share"
 
 type Props = {
   data: any
   pageContext: any
+  location: any
 }
 
 const BlogPostTemplate: React.FC<Props> = (props) => {
@@ -33,6 +42,24 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
           })}
         >
           {post.frontmatter.date}
+        </div>
+        <div
+          css={css`
+            margin-bottom: 8px;
+            button {
+              margin-right: 8px;
+            }
+          `}
+        >
+          <TwitterShareButton url={props.location.href} className="mr-2">
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+          <FacebookShareButton url={props.location.href} className="mr-2">
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+          <PocketShareButton url={props.location.href} className="mr-2">
+            <PocketIcon size={32} round />
+          </PocketShareButton>
         </div>
         <span dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr css={css({ marginTop: "24px" })} />
