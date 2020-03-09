@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `筑波大学写真部`,
-    description: `筑波大学写真部のホームページです`
+    description: `筑波大学写真部のホームページです`,
+    siteUrl: `https://tsukuba-photoclub.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -43,6 +44,7 @@ module.exports = {
       options: {
         trackingId: "UA-159974257-1"
       }
-    }
+    },
+    `gatsby-plugin-sitemap`
   ]
 }
