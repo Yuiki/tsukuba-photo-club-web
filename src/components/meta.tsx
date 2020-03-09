@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 type Props = {
-  title: string
+  title?: string
 }
 
 const Meta: React.FC<Props> = ({ title }) => {
@@ -22,8 +22,8 @@ const Meta: React.FC<Props> = ({ title }) => {
 
   return (
     <Helmet
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={title ? title : site.siteMetadata.title}
+      titleTemplate={title ? `%s | ${site.siteMetadata.title}` : "%s"}
       meta={[
         {
           name: "description",

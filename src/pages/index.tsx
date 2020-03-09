@@ -7,7 +7,7 @@ import Meta from "../components/meta"
 
 const IndexPage: React.FC = () => (
   <>
-    <Meta title="Home" />
+    <Meta />
     <Header fixed />
     <Slideshow
       imageUrls={[
