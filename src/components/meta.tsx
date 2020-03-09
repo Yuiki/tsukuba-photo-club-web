@@ -28,7 +28,7 @@ const Meta: React.FC<Props> = (props) => {
   return (
     <Helmet
       title={title}
-      titleTemplate={title ? `%s | ${site.siteMetadata.title}` : "%s"}
+      titleTemplate={props.title ? `%s | ${site.siteMetadata.title}` : "%s"}
       meta={[
         {
           name: "description",
