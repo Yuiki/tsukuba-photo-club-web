@@ -17,7 +17,7 @@ const Footer: React.FC = () => (
   >
     <div>
       <p>©︎ 2020 筑波大学写真部</p>
-      <p css={css({ fontSize: "10px" })}>
+      <p css={css({ fontSize: "10px", marginBottom: "12px !important" })}>
         当サイトではGoogle
         Analyticsを使用してアクセス情報の収集、処理を行っています。
         <br />
