@@ -14,7 +14,8 @@ const PageContainer: React.FC<Props> = ({ title, children }) => (
     css={css({
       display: "flex",
       flexFlow: "column",
-      minHeight: "100vh"
+      minHeight: "100vh",
+      height: "100%"
     })}
   >
     <AppHeader />
@@ -22,7 +23,7 @@ const PageContainer: React.FC<Props> = ({ title, children }) => (
       text
       css={css({
         paddingTop: "64px",
-        flex: 1
+        flex: "1 0 auto"
       })}
     >
       {title ? (

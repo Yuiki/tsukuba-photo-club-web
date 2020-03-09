@@ -14,7 +14,9 @@ const Header: React.FC<Props> = (props) => (
     render={(data) => (
       <div
         css={css({
-          backgroundColor: props.fixed ? "#ffffffdd" : "#eeeeee44",
+          backgroundColor: props.fixed
+            ? "rgba(255, 255, 255, 0.85)"
+            : "rgba(238, 238, 238, 0.25)",
           position: props.fixed ? "fixed" : undefined,
           width: "100vw",
           zIndex: 1,
