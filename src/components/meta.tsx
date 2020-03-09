@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 type Props = {
   title?: string
   description?: string
+  siteUrl?: string
   image?: any
 }
 
@@ -16,6 +17,7 @@ const Meta: React.FC<Props> = (props) => {
           siteMetadata {
             title
             description
+            siteUrl
           }
         }
       }
@@ -37,7 +39,7 @@ const Meta: React.FC<Props> = (props) => {
         { property: "og:description", content: description },
         {
           property: "og:image",
-          content: `${origin}${props.image ?? "/favicon.ico"}`
+          content: `${props.siteUrl}${props.image ?? "/favicon.ico"}`
         }
       ]}
       htmlAttributes={{ lang: "ja" }}
