@@ -11,7 +11,8 @@ const Footer: React.FC = () => (
       display: "flex",
       justifyContent: "center",
       marginTop: "16px",
-      marginBottom: "4px"
+      marginBottom: "4px",
+      alignItems: "flex-end"
     })}
   >
     <div>
@@ -24,13 +25,16 @@ const Footer: React.FC = () => (
         <a
           href="https://policies.google.com/technologies/partner-sites?hl=ja"
           target="_blank"
+          rel="noopener noreferrer"
         >
           こちら
         </a>
         をご覧ください。
       </p>
     </div>
-    <div css={css({ position: "absolute", right: "12px", bottom: "12px" })}>
+    <div
+      css={css({ position: "absolute", right: "12px", marginBottom: "12px" })}
+    >
       <a
         href="https://twitter.com/tsukuba_photo"
         target="_blank"
