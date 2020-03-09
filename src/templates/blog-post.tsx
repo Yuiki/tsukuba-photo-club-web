@@ -25,7 +25,11 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
 
   return (
     <>
-      <Meta title={post.frontmatter.title} image={post.frontmatter.image} />
+      <Meta
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        image={post.frontmatter.image}
+      />
       <PageContainer>
         <Header
           as="h1"
