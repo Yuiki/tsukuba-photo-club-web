@@ -38,8 +38,7 @@ const Meta: React.FC<Props> = (props) => {
         { property: "og:description", content: description },
         {
           property: "og:image",
-          content: `${site.siteMetadata.siteUrl}${props.image ??
-            "/favicon.ico"}`
+          content: `${site.siteMetadata.siteUrl}${props.image ?? "/ogp.jpg"}`
         },
         {
           property: "og:site_name",
