@@ -25,7 +25,7 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
 
   return (
     <>
-      <Meta title={post.frontmatter.title} />
+      <Meta title={post.frontmatter.title} image={post.frontmatter.image} />
       <PageContainer>
         <Header
           as="h1"
@@ -109,6 +109,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        image
       }
     }
   }

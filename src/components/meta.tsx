@@ -4,9 +4,11 @@ import { useStaticQuery, graphql } from "gatsby"
 
 type Props = {
   title?: string
+  description?: string
+  image?: any
 }
 
-const Meta: React.FC<Props> = ({ title }) => {
+const Meta: React.FC<Props> = (props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -20,14 +22,22 @@ const Meta: React.FC<Props> = ({ title }) => {
     `
   )
 
+  const title = props.title ?? site.siteMetadata.title
+  const description = props.description ?? site.siteMetadata.description
   return (
     <Helmet
-      title={title ? title : site.siteMetadata.title}
+      title={title}
       titleTemplate={title ? `%s | ${site.siteMetadata.title}` : "%s"}
       meta={[
         {
           name: "description",
-          content: site.siteMetadata.description
+          content: description
+        },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        {
+          property: "og:image",
+          content: `${origin}${props.image ?? "/favicon.ico"}`
         }
       ]}
       htmlAttributes={{ lang: "ja" }}
