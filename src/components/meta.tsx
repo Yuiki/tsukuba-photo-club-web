@@ -30,6 +30,7 @@ const Meta: React.FC<Props> = ({ title }) => {
           content: site.siteMetadata.description
         }
       ]}
+      htmlAttributes={{ lang: "ja" }}
     />
   )
 }
