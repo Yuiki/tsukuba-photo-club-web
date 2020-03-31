@@ -59,9 +59,14 @@ const Header: React.FC<Props> = (props) => (
               }
             `}
           >
-            <Menu.Item name="about" as={Link} to="/about" />
+            {(data.allMarkdownRemark.edges as any[]).map(({ node }) => (
+              <Menu.Item
+                name={node.frontmatter.title}
+                as={Link}
+                to={node.fields.slug}
+              />
+            ))}
             <Menu.Item name="blogs" as={Link} to="/blogs" />
-            <Menu.Item name="contact" as={Link} to="/contact" />
           </Menu>
         </div>
       </div>
@@ -77,6 +82,19 @@ const query = graphql`
       childImageSharp {
         fixed(width: 300, height: 80) {
           ...GatsbyImageSharpFixed_noBase64
+        }
+      }
+    }
+    allMarkdownRemark(filter: { fields: { collection: { eq: "static" } } }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
         }
       }
     }
