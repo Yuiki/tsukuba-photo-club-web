@@ -22,11 +22,7 @@ const aCss = css({
   textDecoration: "none",
 })
 
-type Props = {
-  location: any
-}
-
-const Members: React.FC<Props> = (props) => {
+const Members: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
       query {
@@ -68,7 +64,9 @@ const Members: React.FC<Props> = (props) => {
             return (
               <Card key={node.fields.slug}>
                 <Image
-                  src={`${props.location.origin}${node.frontmatter.image}`}
+                  src={`${
+                    typeof window !== "undefined" && window.location.origin
+                  }${node.frontmatter.image}`}
                   wrapped
                 />
                 <Card.Content>
