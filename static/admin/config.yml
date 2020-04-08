@@ -35,6 +35,23 @@ collections:
     fields:
       - { label: "名前 (ハンドルネーム可)", name: "name", widget: "string" }
       - { label: "プロフィール画像", name: "image", widget: "image" }
+      - {
+          label: "学年",
+          name: "grade",
+          widget: "select",
+          options:
+            [
+              { label: "学群1年", value: 1 },
+              { label: "学群2年", value: 2 },
+              { label: "学群3年", value: 3 },
+              { label: "学群4年", value: 4 },
+              { label: "修士1年", value: 5 },
+              { label: "修士2年", value: 6 },
+              { label: "博士1年", value: 7 },
+              { label: "博士2年", value: 8 },
+              { label: "博士3年", value: 9 },
+            ],
+        }
       - { label: "所属", name: "department", widget: "string" }
       - { label: "機材", name: "equipment", widget: "string", required: false }
       - {
@@ -46,7 +63,7 @@ collections:
       - {
           label: "Instagramのアカウント(@以降)",
           name: "instagram",
-          widget: "markdown",
+          widget: "string",
           required: false,
         }
       - { label: "一言", name: "comment", widget: "string" }
