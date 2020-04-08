@@ -63,12 +63,7 @@ const Members: React.FC = () => {
           {members.map(({ node }) => {
             return (
               <Card key={node.fields.slug}>
-                <Image
-                  src={`${
-                    typeof window !== "undefined" && window.location.origin
-                  }${node.frontmatter.image}`}
-                  wrapped
-                />
+                <Image src={`${node.frontmatter.image}`} wrapped />
                 <Card.Content>
                   <Card.Header>{node.frontmatter.name}</Card.Header>
                   <Card.Meta>
