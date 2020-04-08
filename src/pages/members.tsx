@@ -6,10 +6,10 @@ import { Card, Icon, Image } from "semantic-ui-react"
 import css from "@emotion/css"
 
 const GRADE_MAPPING: { [n: number]: string } = {
-  1: "学部1年",
-  2: "学部2年",
-  3: "学部3年",
-  4: "学部4年",
+  1: "学群1年",
+  2: "学群2年",
+  3: "学群3年",
+  4: "学群4年",
   5: "修士1年",
   6: "修士2年",
   7: "博士1年",
