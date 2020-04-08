@@ -7,23 +7,24 @@ import Footer from "./footer"
 type Props = {
   title?: string
   children: ReactNode
+  text?: boolean
 }
 
-const PageContainer: React.FC<Props> = ({ title, children }) => (
+const PageContainer: React.FC<Props> = ({ title, children, text = true }) => (
   <div
     css={css({
       display: "flex",
       flexFlow: "column",
       minHeight: "100vh",
-      height: "100%"
+      height: "100%",
     })}
   >
     <AppHeader />
     <Container
-      text
+      text={text}
       css={css({
         paddingTop: "64px",
-        flex: "1 0 auto"
+        flex: "1 0 auto",
       })}
     >
       {title ? (
@@ -38,7 +39,7 @@ const PageContainer: React.FC<Props> = ({ title, children }) => (
       )}
       <div
         css={css({
-          paddingTop: "16px"
+          paddingTop: "16px",
         })}
       >
         {children}

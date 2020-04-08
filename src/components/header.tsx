@@ -20,7 +20,7 @@ const Header: React.FC<Props> = (props) => (
           position: props.fixed ? "fixed" : undefined,
           width: "100vw",
           zIndex: 1,
-          boxShadow: "0 1px 3px rgba(0,0,0,0.06)"
+          boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
         })}
       >
         <div
@@ -59,6 +59,8 @@ const Header: React.FC<Props> = (props) => (
               }
             `}
           >
+            <Menu.Item name="members" as={Link} to="/members" />
+            <Menu.Item name="blogs" as={Link} to="/blogs" />
             {(data.allMarkdownRemark.edges as any[]).map(({ node }) => (
               <Menu.Item
                 name={node.frontmatter.title}
@@ -66,7 +68,6 @@ const Header: React.FC<Props> = (props) => (
                 to={node.fields.slug}
               />
             ))}
-            <Menu.Item name="blogs" as={Link} to="/blogs" />
           </Menu>
         </div>
       </div>
