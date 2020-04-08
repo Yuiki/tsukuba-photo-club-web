@@ -32,6 +32,7 @@ collections:
     label: "メンバー紹介"
     folder: "content/members"
     create: true
+    identifier_field: name
     fields:
       - { label: "名前 (ハンドルネーム可)", name: "name", widget: "string" }
       - { label: "プロフィール画像", name: "image", widget: "image" }
