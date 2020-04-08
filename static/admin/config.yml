@@ -28,3 +28,25 @@ collections:
     fields:
       - { label: "タイトル", name: "title", widget: "string" }
       - { label: "本文", name: "body", widget: "markdown" }
+  - name: "members"
+    label: "メンバー紹介"
+    folder: "content/members"
+    create: true
+    fields:
+      - { label: "名前 (ハンドルネーム可)", name: "name", widget: "string" }
+      - { label: "プロフィール画像", name: "image", widget: "image" }
+      - { label: "所属", name: "department", widget: "string" }
+      - { label: "機材", name: "equipment", widget: "string", required: false }
+      - {
+          label: "Twitterのアカウント(@以降)",
+          name: "twitter",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Instagramのアカウント(@以降)",
+          name: "instagram",
+          widget: "markdown",
+          required: false,
+        }
+      - { label: "一言", name: "comment", widget: "string" }
