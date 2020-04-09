@@ -49,13 +49,14 @@ const Header: React.FC<Props> = (props) => (
           <Menu
             text
             css={css`
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
               margin-right: 20px !important;
               @media (max-width: 800px) {
                 margin-right: -0.5em !important;
                 margin-top: 0 !important;
-              }
-              @media (max-width: 420px) {
-                margin-bottom: 0px !important;
+                margin-bottom: 8px !important;
               }
             `}
           >

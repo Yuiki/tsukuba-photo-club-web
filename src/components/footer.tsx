@@ -12,12 +12,12 @@ const Footer: React.FC = () => (
       justifyContent: "center",
       marginTop: "16px",
       marginBottom: "4px",
-      alignItems: "flex-end"
+      alignItems: "flex-end",
     })}
   >
     <div>
       <p>©︎ 2020 筑波大学写真部</p>
-      <p css={css({ fontSize: "10px", marginBottom: "12px !important" })}>
+      <p css={css({ fontSize: "10px", marginBottom: "20px !important" })}>
         当サイトではGoogle
         Analyticsを使用してアクセス情報の収集、処理を行っています。
         <br />
@@ -32,9 +32,7 @@ const Footer: React.FC = () => (
         をご覧ください。
       </p>
     </div>
-    <div
-      css={css({ position: "absolute", right: "12px", marginBottom: "12px" })}
-    >
+    <div css={css({ position: "absolute", right: "8px", marginBottom: "8px" })}>
       <a
         href="https://twitter.com/tsukuba_photo"
         target="_blank"
@@ -45,7 +43,7 @@ const Footer: React.FC = () => (
           size="large"
           color="black"
           css={css({
-            marginRight: "8px !important"
+            marginRight: "8px !important",
           })}
         />
       </a>

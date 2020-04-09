@@ -22,10 +22,13 @@ const PageContainer: React.FC<Props> = ({ title, children, text = true }) => (
     <AppHeader />
     <Container
       text={text}
-      css={css({
-        paddingTop: "64px",
-        flex: "1 0 auto",
-      })}
+      css={css`
+        @media (max-width: 800px) {
+          padding-top: 32px;
+        }
+        padding-top: 64px;
+        flex: 1 0 auto;
+      `}
     >
       {title ? (
         <>
@@ -39,7 +42,7 @@ const PageContainer: React.FC<Props> = ({ title, children, text = true }) => (
       )}
       <div
         css={css({
-          paddingTop: "16px",
+          paddingTop: "12px",
         })}
       >
         {children}

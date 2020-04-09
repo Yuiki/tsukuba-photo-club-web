@@ -27,7 +27,7 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
         <Header
           as="h1"
           css={css({
-            fontFamily: "sans-serif !important;"
+            fontFamily: "sans-serif !important;",
           })}
         >
           {post.frontmatter.title}
@@ -35,7 +35,7 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
         <div
           css={css({
             color: "grey",
-            marginBottom: "24px"
+            marginBottom: "20px",
           })}
         >
           {post.frontmatter.date}
@@ -49,7 +49,7 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
-            padding: 0
+            padding: 0,
           }}
         >
           <li>
