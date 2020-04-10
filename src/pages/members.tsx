@@ -2,8 +2,9 @@ import React from "react"
 import PageContainer from "../components/page-container"
 import Meta from "../components/meta"
 import { useStaticQuery, graphql } from "gatsby"
-import { Card, Icon, Image } from "semantic-ui-react"
+import { Card, Icon } from "semantic-ui-react"
 import css from "@emotion/css"
+import Img from "gatsby-image"
 
 const GRADE_MAPPING: { [n: number]: string } = {
   1: "学群1年",
@@ -38,7 +39,13 @@ const Members: React.FC = () => {
               }
               frontmatter {
                 name
-                image
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 400, maxHeight: 400) {
+                      ...GatsbyImageSharpFluid_noBase64
+                    }
+                  }
+                }
                 grade
                 department
                 equipment
@@ -63,7 +70,7 @@ const Members: React.FC = () => {
           {members.map(({ node }) => {
             return (
               <Card key={node.fields.slug}>
-                <Image src={`${node.frontmatter.image}`} wrapped />
+                <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
                 <Card.Content>
                   <Card.Header>{node.frontmatter.name}</Card.Header>
                   <Card.Meta>
