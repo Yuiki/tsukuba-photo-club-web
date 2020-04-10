@@ -2,7 +2,7 @@ import React from "react"
 import PageContainer from "../components/page-container"
 import Meta from "../components/meta"
 import { useStaticQuery, graphql } from "gatsby"
-import { Card, Icon } from "semantic-ui-react"
+import { Card, Icon, Button } from "semantic-ui-react"
 import css from "@emotion/css"
 import Img from "gatsby-image"
 
@@ -17,11 +17,6 @@ const GRADE_MAPPING: { [n: number]: string } = {
   8: "博士2年",
   9: "博士3年",
 }
-
-const aCss = css({
-  color: "inherit",
-  textDecoration: "none",
-})
 
 const Members: React.FC = () => {
   const { allMarkdownRemark } = useStaticQuery(
@@ -66,6 +61,9 @@ const Members: React.FC = () => {
     <>
       <Meta title="Members" />
       <PageContainer title="Members" text={false}>
+        <p css={css({ textAlign: "center", paddingBottom: "12px" })}>
+          現在、追加中です。
+        </p>
         <Card.Group itemsPerRow={5} doubling stackable>
           {members.map(({ node }) => {
             return (
@@ -73,7 +71,7 @@ const Members: React.FC = () => {
                 <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
                 <Card.Content>
                   <Card.Header>{node.frontmatter.name}</Card.Header>
-                  <Card.Meta>
+                  <Card.Meta css={css({ fontSize: "0.9em !important" })}>
                     <span>{node.frontmatter.department}</span>
                     <span>{GRADE_MAPPING[node.frontmatter.grade]}</span>
                   </Card.Meta>
@@ -90,37 +88,35 @@ const Members: React.FC = () => {
                     ) : (
                       <></>
                     )}
-                    {node.frontmatter.twitter ? (
-                      <div>
-                        <a
-                          css={aCss}
-                          href={`https://twitter.com/${node.frontmatter.twitter}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Icon name="twitter" />
-                          {node.frontmatter.twitter}
-                        </a>
-                      </div>
-                    ) : (
-                      <></>
-                    )}
-                    {node.frontmatter.instagram ? (
-                      <div>
-                        <a
-                          css={aCss}
-                          href={`https://www.instagram.com/${node.frontmatter.instagram}/`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Icon name="instagram" />
-                          {node.frontmatter.instagram}
-                        </a>
-                      </div>
-                    ) : (
-                      <></>
-                    )}
                   </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                  <div className="ui two buttons">
+                    <Button
+                      basic
+                      disabled={!node.frontmatter.twitter}
+                      color="blue"
+                      as="a"
+                      icon
+                      href={`https://twitter.com/${node.frontmatter.twitter}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon name="twitter" />
+                    </Button>
+                    <Button
+                      basic
+                      disabled={!node.frontmatter.instagram}
+                      color="pink"
+                      as="a"
+                      icon
+                      href={`https://www.instagram.com/${node.frontmatter.instagram}/`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Icon name="instagram" />
+                    </Button>
+                  </div>
                 </Card.Content>
               </Card>
             )
