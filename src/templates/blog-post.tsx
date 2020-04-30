@@ -41,7 +41,14 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
           {post.frontmatter.date}
         </div>
         <ShareButtons href={props.location.href} />
-        <span dangerouslySetInnerHTML={{ __html: post.html }} />
+        <span
+          css={css`
+            img {
+              max-width: 100%;
+            }
+          `}
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
         <hr css={css({ marginTop: "24px" })} />
         <ul
           style={{
