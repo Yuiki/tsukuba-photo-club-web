@@ -68,7 +68,9 @@ const Members: React.FC = () => {
           {members.map(({ node }) => {
             return (
               <Card key={node.fields.slug}>
-                <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
+                {node.frontmatter.image && (
+                  <Img fluid={node.frontmatter.image.childImageSharp.fluid} />
+                )}
                 <Card.Content>
                   <Card.Header>{node.frontmatter.name}</Card.Header>
                   <Card.Meta css={css({ fontSize: "0.9em !important" })}>
