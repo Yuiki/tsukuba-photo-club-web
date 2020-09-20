@@ -2,7 +2,7 @@ import React from "react"
 import PageContainer from "../components/page-container"
 import Meta from "../components/meta"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { Header } from "semantic-ui-react"
+import { Card, CardGroup, Header } from "semantic-ui-react"
 import css from "@emotion/css"
 
 const Blogs: React.FC = () => {
@@ -37,30 +37,37 @@ const Blogs: React.FC = () => {
     <>
       <Meta title="Blogs" />
       <PageContainer title="Blogs">
-        {posts.map(({ node }) => {
-          return (
-            <div key={node.fields.slug} css={css({ marginBottom: "40px" })}>
-              <Link to={node.fields.slug}>
-                <Header as="h2">{node.frontmatter.title}</Header>
-              </Link>
-              <div
-                css={css({
-                  fontSize: "12px",
-                  color: "grey",
-                  marginTop: "4px"
-                })}
+        <Card.Group>
+          {posts.map(({ node }) => {
+            return (
+              <Card
+                key={node.fields.slug}
+                fluid
+                as={Link}
+                to={node.fields.slug}
+                css={css({ padding: "12px !important" })}
               >
-                {node.frontmatter.date}
-              </div>
-              <p
-                css={css({ marginTop: "16px" })}
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt
-                }}
-              />
-            </div>
-          )
-        })}
+                <Card.Content>
+                  <Header as="h2">{node.frontmatter.title}</Header>
+                  <div
+                    css={css({
+                      fontSize: "14px",
+                      color: "grey",
+                    })}
+                  >
+                    {node.frontmatter.date}
+                  </div>
+                  <p
+                    css={css({ marginTop: "16px !important", color: "black" })}
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.description || node.excerpt,
+                    }}
+                  />
+                </Card.Content>
+              </Card>
+            )
+          })}
+        </Card.Group>
       </PageContainer>
     </>
   )
