@@ -46,6 +46,9 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
             img {
               max-width: 100%;
             }
+            p {
+              line-height: 32px !important;
+            }
           `}
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
