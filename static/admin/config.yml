@@ -42,15 +42,15 @@ collections:
           widget: "select",
           options:
             [
-              { label: "学群1年", value: 1 },
-              { label: "学群2年", value: 2 },
-              { label: "学群3年", value: 3 },
-              { label: "学群4年", value: 4 },
-              { label: "修士1年", value: 5 },
-              { label: "修士2年", value: 6 },
-              { label: "博士1年", value: 7 },
-              { label: "博士2年", value: 8 },
-              { label: "博士3年", value: 9 },
+              { label: "学群1年", value: "1" },
+              { label: "学群2年", value: "2" },
+              { label: "学群3年", value: "3" },
+              { label: "学群4年", value: "4" },
+              { label: "修士1年", value: "5" },
+              { label: "修士2年", value: "6" },
+              { label: "博士1年", value: "7" },
+              { label: "博士2年", value: "8" },
+              { label: "博士3年", value: "9" },
             ],
         }
       - { label: "所属", name: "department", widget: "string" }
