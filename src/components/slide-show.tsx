@@ -30,10 +30,9 @@ const Slideshow: React.FC<Props> = (props) => {
             objectFit: "cover",
             position: "absolute",
             opacity: idx === urlIdx ? "1" : "0",
-            transition: "opacity 1s ease"
+            transition: "opacity 1s ease",
           })}
           src={url}
-          alt="cover"
         />
       ))}
     </>

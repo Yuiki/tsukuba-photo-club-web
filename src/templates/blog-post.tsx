@@ -3,7 +3,7 @@ import PageContainer from "../components/page-container"
 import Meta from "../components/meta"
 import { graphql, Link } from "gatsby"
 import css from "@emotion/css"
-import { Header } from "semantic-ui-react"
+import { Button, Header, Icon } from "semantic-ui-react"
 import ShareButtons from "../components/share-buttons"
 
 type Props = {
@@ -64,16 +64,34 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
         >
           <li>
             {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
+              <Button
+                icon
+                labelPosition="left"
+                as={Link}
+                to={previous.fields.slug}
+                style={{
+                  margin: "4px",
+                }}
+              >
+                <Icon name="arrow left" />
+                {previous.frontmatter.title}
+              </Button>
             )}
           </li>
           <li>
             {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
+              <Button
+                icon
+                labelPosition="right"
+                as={Link}
+                to={next.fields.slug}
+                style={{
+                  margin: "4px",
+                }}
+              >
+                <Icon name="arrow right" />
+                {next.frontmatter.title}
+              </Button>
             )}
           </li>
         </ul>
