@@ -45,6 +45,7 @@ const BlogPostTemplate: React.FC<Props> = (props) => {
           css={css`
             img {
               max-width: 100%;
+              object-fit: contain;
             }
             p {
               line-height: 32px !important;
